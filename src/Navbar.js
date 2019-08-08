@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+
 
 export default class Navbar extends Component {
 	render() {
-		const props = {
-			link: {
+		const navProps = {
+			style: {
 				width: '100px',
 				padding: '12px',
 				margin: '0 6px 6px',
@@ -11,17 +13,18 @@ export default class Navbar extends Component {
 				textDecoration: 'none',
 				color: 'white',
 			},
-			activeLink: {
+			activeStyle: {
 				background: 'darkblue'
 			}
 		}
+
 		return (
 			<div>
-				<NavLink exact to="/"   {...props}>Home</NavLink>
-				<NavLink to="/login"    {...props}>Login</NavLink>
-				<NavLink to="/signup"   {...props}>Signup</NavLink>
-				<NavLink to="/settings" {...props}>Settings</NavLink>
-				<NavLink to="/account"  {...props}>Account</NavLink>
+				<NavLink {...navProps} exact to="/" >Home</NavLink>
+				<NavLink {...navProps} to="/login" >Login</NavLink>
+				<NavLink {...navProps} to="/signup" >Signup</NavLink>
+				<NavLink {...navProps} to="/settings" >Settings</NavLink>
+				<NavLink {...navProps} to="/account" >Account</NavLink>
 			</div>
 		)
 	}
